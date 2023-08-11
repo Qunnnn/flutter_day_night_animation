@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_day_night_animation/widgets/star.dart';
 import 'package:flutter_day_night_animation/widgets/sun.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,12 +38,60 @@ class _HomePageState extends State<HomePage> {
           ),
           child: Stack(
             children: [
+              AnimatedPositioned(
+                top: _switchValue == false ? 20 : 20,
+                left: _switchValue == false ? -50 : 50,
+                duration: const Duration(milliseconds: 500),
+                child: Image.asset(
+                  'assets/moon.png',
+                ),
+              ),
+              Positioned(
+                top: 20,
+                left: 40,
+                child: AnimatedOpacity(
+                    opacity: _switchValue == false ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    child: const Star()),
+              ),
+              Positioned(
+                top: 40,
+                left: 100,
+                child: AnimatedOpacity(
+                    opacity: _switchValue == false ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    child: const Star()),
+              ),
+              Positioned(
+                top: 30,
+                left: 170,
+                child: AnimatedOpacity(
+                    opacity: _switchValue == false ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    child: const Star()),
+              ),
+              Positioned(
+                top: 50,
+                left: 200,
+                child: AnimatedOpacity(
+                    opacity: _switchValue == false ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    child: const Star()),
+              ),
+              Positioned(
+                top: 40,
+                left: 150,
+                child: AnimatedOpacity(
+                    opacity: _switchValue == false ? 0 : 1,
+                    duration: const Duration(milliseconds: 500),
+                    child: const Star()),
+              ),
               AnimatedPadding(
                   padding: EdgeInsets.only(
                     top: _switchValue == false ? 0 : 50,
                   ),
                   duration: const Duration(milliseconds: 200),
-                  child: Center(child: Sun())),
+                  child: const Center(child: Sun())),
               AnimatedPositioned(
                 top: _switchValue == false ? 20 : 20,
                 left: _switchValue == false ? 30 : 400,
